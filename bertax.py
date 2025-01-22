@@ -142,6 +142,11 @@ def seq2tokens(seq, token_dict, seq_length=250, max_length=None,
     return [np.array(indices), np.array(segments)]
 
 
+#####
+# To download BERTAX pretrained model !!!!!!!!!!!!!!!!!!! https://github.com/rnajena/bertax/releases/latest/download/big_trainingset_all_fix_classes_selection.h5
+####
+
+
 
 def tokenizer(sequences, max_seq_len):
     tokend= get_token_dict()
@@ -155,7 +160,7 @@ def tokenizer(sequences, max_seq_len):
   
 def init_model():
     # Load the Keras model from .h5
-    keras_model = load_bert('bertax.h5')
+    keras_model = load_bert('big_trainingset_all_fix_classes_selection.h5')
     # Define the parameters for the BERT model
     params = {
         'embed_dim': 250,
