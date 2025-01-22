@@ -2,6 +2,11 @@ from KmerTokenizer import KmerTokenizer
 from transformers import AutoModel
 import torch
 
+###
+#pip install git+https://github.com/MsAlEhR/KmerTokenizer.git
+###
+
+
 def tokenizer(sequences, max_seq_len):
     tokenizr = KmerTokenizer(kmerlen=6, overlapping=True, maxlen=max_seq_len)
     tokenized_sequences = []
