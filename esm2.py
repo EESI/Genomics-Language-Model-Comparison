@@ -12,6 +12,7 @@ def tokenizer(sequences: list[str], max_seq_len: int = 1000, size: str = "facebo
 class esm2_model(nn.Module):
     def __init__(self, size: str = "facebook/esm2_t30_150M_UR50D"):
         super(esm2_model, self).__init__()
+        self.size = size
         self.esm = AutoModelForMaskedLM.from_pretrained(size)
     
     def forward(self, input_ids, attention_mask):
